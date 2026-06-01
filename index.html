@@ -36,6 +36,7 @@
             position: relative;
         }
 
+        /* Top Menu & Navigation Bar */
         .top-bar {
             display: flex;
             justify-content: space-between;
@@ -65,6 +66,7 @@
             transition: 0.3s;
         }
 
+        /* Sidebar Panel */
         .sidebar {
             position: fixed;
             top: 0;
@@ -95,6 +97,7 @@
 
         .sidebar-overlay.show { display: block; }
 
+        /* Accordion Menu Items Inside Sidebar */
         .menu-item-collapse {
             margin-bottom: 12px;
             border: 1px solid rgba(255, 255, 255, 0.05);
@@ -142,6 +145,7 @@
             line-height: 1.7;
         }
 
+        /* Social List inside Menu */
         .menu-social-list {
             padding: 10px;
             display: flex;
@@ -161,6 +165,7 @@
         }
         .menu-social-link svg { width: 20px; height: 20px; fill: currentColor; }
 
+        /* CV Send Link Style */
         .cv-link-btn {
             display: flex;
             justify-content: space-between;
@@ -177,6 +182,7 @@
             margin-top: 5px;
         }
 
+        /* Header */
         .header { text-align: center; margin-bottom: 20px; }
 
         .brand-name {
@@ -202,6 +208,7 @@
             box-shadow: 0 4px 15px rgba(56, 189, 248, 0.1);
         }
 
+        /* Instructions Banner */
         .top-instruction-badge {
             background: rgba(56, 189, 248, 0.08);
             border: 1px dashed #38bdf8;
@@ -231,6 +238,7 @@
             to { transform: translateY(-4px) scale(1.1); }
         }
 
+        /* Navigation Tabs */
         .tabs-container {
             display: flex;
             gap: 8px;
@@ -267,6 +275,7 @@
             box-shadow: 0 4px 20px rgba(56, 189, 248, 0.35);
         }
 
+        /* Content Sections Style */
         .content-section { 
             display: none; 
             animation: fadeIn 0.4s ease-in-out forwards; 
@@ -283,42 +292,7 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
-        .notice-badge {
-            background: rgba(56, 189, 248, 0.05);
-            border-right: 4px solid #38bdf8;
-            padding: 14px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            margin-bottom: 16px;
-            color: #cbd5e1;
-            text-align: justify;
-        }
-
-        .notice-badge-red {
-            background: rgba(239, 68, 68, 0.07);
-            border-right: 4px solid #ef4444;
-            padding: 14px;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            margin-top: 16px;
-            color: #fca5a5;
-            text-align: justify;
-            font-weight: 700;
-            line-height: 1.6;
-        }
-
-        .custom-request-badge {
-            background: rgba(234, 179, 8, 0.05);
-            border-right: 4px solid #eab308;
-            color: #fef08a;
-            text-align: center;
-            font-weight: bold;
-            margin-top: 5px;
-            padding: 12px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-        }
-
+        /* Cards Design */
         .grid-container { display: flex; flex-direction: column; gap: 12px; }
 
         .card {
@@ -356,16 +330,9 @@
             font-weight: 900; 
             color: #ffffff !important;
             direction: rtl;
-            text-align: right;
         }
         .card-sub { font-size: 0.85rem; color: #94a3b8; margin-top: 4px; }
-
-        .card-line {
-            width: 1px;
-            height: 35px;
-            background: rgba(255, 255, 255, 0.12);
-            margin: 0 15px;
-        }
+        .card-line { width: 1px; height: 35px; background: rgba(255, 255, 255, 0.12); margin: 0 15px; }
 
         .card-price {
             background: rgba(56, 189, 248, 0.08);
@@ -377,115 +344,173 @@
             white-space: nowrap;
             border: 1px solid rgba(56, 189, 248, 0.2);
             direction: ltr;
-            text-align: center;
             min-width: 110px;
-            box-shadow: inset 0 2px 8px rgba(56, 189, 248, 0.05);
-        }
-
-        .service-card {
-            background: rgba(15, 23, 42, 0.5);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            border-radius: 18px;
-            padding: 22px;
             text-align: center;
-            border-top: 4px solid #38bdf8;
-            margin-bottom: 12px;
         }
-        .service-card:last-child { margin-bottom: 0; }
 
-        .service-icon { width: 44px; height: 44px; fill: #38bdf8; margin-bottom: 14px; }
-        .service-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; color: #fff; }
-        .service-desc { font-size: 0.9rem; color: #94a3b8; line-height: 1.6; }
-
-        .feedback-box { width: 100%; }
-        .feedback-title { font-size: 1.15rem; font-weight: 800; text-align: center; margin-bottom: 15px; color: #fff; }
-        .form-group { margin-bottom: 12px; }
-        
-        .form-input, .form-textarea {
+        /* --- نوی: ستایلی فۆرمی مۆدێل --- */
+        .modal-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            justify-content: center;
+            align-items: center;
+            padding: 15px;
+        }
+        .modal-content {
+            background: #0f172a;
             width: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            max-width: 440px;
+            max-height: 90vh;
+            border-radius: 28px;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            position: relative;
+            padding: 25px;
+            overflow-y: auto;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: modalScale 0.3s ease-out;
+        }
+        @keyframes modalScale {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+        .modal-header { text-align: center; margin-bottom: 20px; }
+        .modal-title { font-size: 1.4rem; font-weight: 900; color: #38bdf8; }
+        
+        .form-group-custom { margin-bottom: 16px; text-align: right; }
+        .form-label { display: block; font-size: 0.9rem; font-weight: 700; color: #94a3b8; margin-bottom: 6px; }
+        .form-input-custom {
+            width: 100%;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             border-radius: 12px;
-            padding: 12px;
+            padding: 12px 15px;
             color: #fff;
-            font-family: inherit;
-            font-size: 0.95rem;
+            font-size: 1rem;
             outline: none;
             transition: 0.3s;
         }
-        .form-input:focus, .form-textarea:focus { border-color: #38bdf8; }
-        .form-textarea { resize: none; height: 80px; }
-
-        .rating-select { display: flex; gap: 6px; margin-bottom: 15px; justify-content: center; direction: ltr; }
-        .star-icon { font-size: 1.8rem; color: #334155; cursor: pointer; transition: 0.2s; }
-        .star-icon.active { color: #fbbf24; }
-
-        .submit-btn {
-            width: 100%; background: linear-gradient(135deg, #38bdf8, #0ea5e9); color: #070a13; border: none;
-            padding: 14px; border-radius: 12px; font-weight: 800; font-size: 1rem;
-            cursor: pointer; transition: 0.3s; box-shadow: 0 4px 15px rgba(56, 189, 248, 0.2);
-        }
-        .submit-btn:hover { transform: translateY(-1px); }
-
-        .reviews-list {
-            margin-top: 20px; display: flex; flex-direction: column;
-            gap: 10px; max-height: 250px; overflow-y: auto; padding-right: 2px;
-        }
-        .review-item { background: rgba(0, 0, 0, 0.2); border: 1px solid rgba(255, 255, 255, 0.05); padding: 14px; border-radius: 14px; }
-        .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px; }
-        .review-name { font-weight: 700; font-size: 0.95rem; color: #38bdf8; }
-        .review-stars { color: #fbbf24; font-size: 0.9rem; }
-        .review-text { font-size: 0.9rem; color: #cbd5e1; }
-
-        .feedback-whatsapp-box {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            text-align: center;
-        }
-        .feedback-whatsapp-text { font-size: 0.85rem; color: #94a3b8; margin-bottom: 10px; }
-        .btn-feedback-wa {
-            display: inline-flex; align-items: center; justify-content: center;
-            padding: 10px 20px; border-radius: 10px; text-decoration: none;
-            color: #fff; font-weight: 700; font-size: 0.9rem; background: #16a34a;
-            gap: 8px; direction: ltr; transition: 0.3s;
-        }
-        .btn-feedback-wa svg { width: 18px; height: 18px; fill: currentColor; }
-
-        .payment-box { width: 100%; }
-        .payment-title { font-size: 1.15rem; font-weight: 800; text-align: center; margin-bottom: 15px; color: #22d3ee; }
-        .payment-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+        .form-input-custom:focus { border-color: #38bdf8; background: rgba(255,255,255,0.08); }
         
-        .payment-item {
-            padding: 14px 10px; border-radius: 16px; display: flex; flex-direction: column; align-items: center;
-            justify-content: center; font-weight: 800; font-size: 0.9rem; gap: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.05); cursor: pointer; text-decoration: none; transition: 0.3s;
-            text-align: center;
-        }
-        .payment-item:hover { transform: scale(1.02); }
-
-        .p-fib { background: rgba(56, 189, 248, 0.06); color: #38bdf8; border: 1px solid rgba(56, 189, 248, 0.2); }
-        .p-fastpay { background: rgba(244, 63, 94, 0.06); color: #fb7185; border: 1px solid rgba(244, 63, 94, 0.2); }
-        .p-qi { background: rgba(245, 158, 11, 0.06); color: #fbbf24; border: 1px solid rgba(245, 158, 11, 0.2); }
-        .p-nass { background: rgba(239, 68, 68, 0.06); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
-
-        .payment-item-icon {
-            width: 38px; height: 38px; background: rgba(255, 255, 255, 0.06);
-            border-radius: 12px; display: flex; align-items: center; justify-content: center;
-        }
-        .payment-item-icon svg { width: 22px; height: 22px; fill: currentColor; }
-
-        .payment-number-box {
-            background: rgba(0, 0, 0, 0.4); border: 1px dashed rgba(255, 255, 255, 0.15);
-            padding: 12px; border-radius: 14px; text-align: center; font-weight: 900;
-            font-size: 1.25rem; color: #38bdf8; display: flex; align-items: center;
-            justify-content: center; gap: 10px; direction: ltr; margin-top: 15px;
+        .tutorial-link-btn {
+            display: flex; align-items: center; justify-content: center; gap: 8px;
+            background: rgba(239, 68, 68, 0.1);
+            border: 1px solid rgba(239, 68, 68, 0.3);
+            color: #ef4444;
+            padding: 10px; border-radius: 10px;
+            text-decoration: none; font-weight: 700; font-size: 0.85rem;
+            margin-bottom: 15px;
         }
 
+        .select-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        
+        .close-modal {
+            position: absolute; top: 15px; left: 15px;
+            color: #64748b; font-size: 1.5rem; cursor: pointer;
+        }
+
+        .final-btn {
+            background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+            color: #070a13; width: 100%; padding: 16px;
+            border-radius: 14px; border: none; font-weight: 900;
+            font-size: 1.1rem; cursor: pointer; margin-top: 10px;
+            box-shadow: 0 10px 20px -5px rgba(56, 189, 248, 0.4);
+        }
+
+        /* هەمان ستایلەکانی پێشوو */
+        .notice-badge-red { background: rgba(239, 68, 68, 0.07); border-right: 4px solid #ef4444; padding: 14px; border-radius: 12px; font-size: 0.9rem; margin-top: 16px; color: #fca5a5; text-align: justify; font-weight: 700; }
+        .custom-request-badge { background: rgba(234, 179, 8, 0.05); border-right: 4px solid #eab308; color: #fef08a; text-align: center; font-weight: bold; margin-top: 5px; padding: 12px; border-radius: 10px; }
+        .service-card { background: rgba(15, 23, 42, 0.5); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 18px; padding: 22px; text-align: center; border-top: 4px solid #38bdf8; margin-bottom: 12px; }
+        .service-icon { width: 44px; height: 44px; fill: #38bdf8; margin-bottom: 14px; }
+        .service-title { font-size: 1.2rem; font-weight: 800; margin-bottom: 8px; color: #fff; }
+        .service-desc { font-size: 0.9rem; color: #94a3b8; }
+        .payment-number-box { background: rgba(0, 0, 0, 0.4); border: 1px dashed rgba(255, 255, 255, 0.15); padding: 12px; border-radius: 14px; text-align: center; font-weight: 900; font-size: 1.25rem; color: #38bdf8; display: flex; align-items: center; justify-content: center; gap: 10px; direction: ltr; margin-top: 15px; }
         .footer-note { text-align: center; font-size: 0.75rem; color: #475569; margin-top: 25px; }
     </style>
 </head>
 <body>
+
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeOrderModal()">&times;</span>
+            <div class="modal-header">
+                <div class="modal-title">زانیارییەکانی سپۆنسەر</div>
+                <p style="font-size: 0.85rem; color: #64748b; margin-top: 5px;">تکایە زانیارییەکان بە وردی پڕ بکەرەوە</p>
+            </div>
+
+            <div class="form-group-custom">
+                <label class="form-label">ناوی بەڕێزت</label>
+                <input type="text" id="order-name" class="form-input-custom" placeholder="ناوی چواری بنووسە">
+            </div>
+
+            <div class="select-row">
+                <div class="form-group-custom">
+                    <label class="form-label">جۆری سپۆنسەر</label>
+                    <input type="text" id="order-type" class="form-input-custom" readonly>
+                </div>
+                <div class="form-group-custom">
+                    <label class="form-label">نرخ (IQD)</label>
+                    <input type="text" id="order-price" class="form-input-custom" readonly>
+                </div>
+            </div>
+
+            <a href="https://youtube.com/shorts/28231PObkSc?si=IQAPtVC4GdKRf_QC" target="_blank" class="tutorial-link-btn">
+                <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M10 15l5.19-3L10 9v6m11.56-7.83c.13.47.22 1.1.28 1.9.07.8.1 1.49.1 2.09L22 12c0 2.19-.16 3.8-.44 4.83-.25.9-.83 1.48-1.73 1.73-.47.13-1.33.22-2.5.28-1.23.07-2.33.1-3.33.1L12 19c-2.19 0-3.8-.16-4.83-.44-.9-.25-1.48-.83-1.73-1.73-.13-.47-.22-1.1-.28-1.9-.07-.8-.1-1.49-.1-2.09L5 12c0-2.19.16-3.8.44-4.83.25-.9.83-1.48 1.73-1.73.47-.13 1.33-.22 2.5-.28 1.23-.07 2.33-.1 3.33-.1L12 5c2.19 0 3.8.16 4.83.44.9.25 1.48.83 1.73 1.73z"/></svg>
+                فێرکاری کۆپی کردنی کۆدی ڤیدیۆ
+            </a>
+
+            <div class="form-group-custom">
+                <label class="form-label">کۆدی ڤیدیۆ (Video Code)</label>
+                <input type="text" id="order-vid-code" class="form-input-custom" placeholder="کۆدی ڕێپێدان دابنێ">
+            </div>
+
+            <div class="form-group-custom">
+                <label class="form-label">لینکی ڤیدیۆ</label>
+                <input type="text" id="order-vid-link" class="form-input-custom" placeholder="https://tiktok.com/...">
+            </div>
+
+            <div class="select-row">
+                <div class="form-group-custom">
+                    <label class="form-label">دیاریکردنی ڕەگەز</label>
+                    <select id="order-gender" class="form-input-custom" style="background: #1e293b;">
+                        <option value="هەردووکی">نێر و مێ (هەردووک)</option>
+                        <option value="کوڕ">تەنیا کوڕ</option>
+                        <option value="کچ">تەنیا کچ</option>
+                    </select>
+                </div>
+                <div class="form-group-custom">
+                    <label class="form-label">تەمەن (لە - بۆ)</label>
+                    <input type="text" id="order-age" class="form-input-custom" placeholder="نموونە: ١٨ - ٤٥">
+                </div>
+            </div>
+
+            <div class="form-group-custom">
+                <label class="form-label">دیاریکردنی بینەر (زمان)</label>
+                <select id="order-audience" class="form-input-custom" style="background: #1e293b;">
+                    <option value="کورد و عەرەب">کورد و عەرەب (هەردووک)</option>
+                    <option value="تەنیا کورد">تەنیا کورد</option>
+                    <option value="تەنیا عەرەب">تەنیا عەرەب</option>
+                </select>
+            </div>
+
+            <div class="form-group-custom">
+                <label class="form-label">جۆری کارەکەت بنووسە</label>
+                <input type="text" id="order-work" class="form-input-custom" placeholder="نموونە: ئۆنلاین، خواردەمەنی، کەلوپەل">
+            </div>
+
+            <div class="form-group-custom">
+                <label class="form-label">ڕێگەی پەیوەندی و زانیاری زیاتر</label>
+                <textarea id="order-contact" class="form-input-custom" style="height: 70px;" placeholder="ڕەقەم وەتسئەپ یان لینکی سۆشیاڵ میدیا کە بخرێتە سەر سپۆنسەرەکە"></textarea>
+            </div>
+
+            <p style="font-size: 0.8rem; color: #eab308; text-align: center; margin-bottom: 10px;">⚠️ تکایە سەیری زانیاریەکانت بکەرەوە پێش ناردن</p>
+            
+            <button class="final-btn" onclick="submitToWhatsApp()">سپۆنسەرەکە تەواو بکە</button>
+        </div>
+    </div>
 
     <div class="sidebar-overlay" id="overlay" onclick="toggleMenu()"></div>
     <div class="sidebar" id="sidebar">
@@ -515,20 +540,10 @@
             <div class="menu-content-body">
                 <div class="menu-social-list">
                     <a href="https://www.tiktok.com/@kurd.agency?_r=1&_t=ZS-96lUyAmKINR" target="_blank" class="menu-social-link" style="background: #000;">
-                        <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.836 4.836 0 0 1-3.23-1.22 4.851 4.851 0 0 1-1.22-3.23h-3.82v12.03a3.197 3.197 0 0 1-3.19 3.19 3.197 3.197 0 0 1-3.19-3.19 3.197 3.197 0 0 1 3.19-3.19c.29 0 .58.03.86.08V7.52a8.03 8.03 0 0 0-8.86 8c0 4.42 3.58 8 8 8s8-3.58 8-8V11.4c1.39 1 3.1 1.6 4.95 1.6v-3.82a4.843 4.843 0 0 1-3.4-2.49z"/></svg>
                         تیکتۆکی فەرمی کورد ئەجێنسی
                     </a>
                     <a href="https://www.facebook.com/share/1CAmPqe2Pj/?mibextid=wwXIfr" target="_blank" class="menu-social-link" style="background: #1877f2;">
-                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
                         فەیسبووکی فەرمی کورد ئەجێنسی
-                    </a>
-                    <a href="https://www.instagram.com/aryann.tech?igsh=MXEzcWozYWZwaHVyOA%3D%3D&utm_source=qr" target="_blank" class="menu-social-link" style="background: #e1306c;">
-                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
-                        ئینستاگرام
-                    </a>
-                    <a href="https://snapchat.com/t/54mPJKNh" target="_blank" class="menu-social-link" style="background: #fffc00; color: #000;">
-                        <svg viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.64 11.03 19 12 19c4.97 0 9-4.03 9-9 0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-                        سناپچات
                     </a>
                 </div>
             </div>
@@ -552,7 +567,7 @@
         </div>
 
         <div class="header">
-            <div class="main-title">نرخ و خزمەتگوزاریەکانی کورد ئەجێنسی ببینە داوای بکە</div>
+            <div class="main-title">ئێستا سپۆنسەر بکە و کارەکەت گەشە پێ بدە</div>
             <div class="top-instruction-badge">
                 <span class="hand-pointer">👇</span>
                 تکایە بۆ ویستنی هەر سپۆنسەر و خزمەتگوزاریەک تەنیا پەنجەی لێبدە
@@ -560,312 +575,104 @@
         </div>
 
         <div class="tabs-container">
-            <button class="tab-btn active" onclick="openTab(event, 'tiktok-biz')">
-                <svg viewBox="0 0 24 24"><path d="M19.59 6.69a4.836 4.836 0 0 1-3.23-1.22 4.851 4.851 0 0 1-1.22-3.23h-3.82v12.03a3.197 3.197 0 0 1-3.19 3.19 3.197 3.197 0 0 1-3.19-3.19 3.197 3.197 0 0 1 3.19-3.19c.29 0 .58.03.86.08V7.52a8.03 8.03 0 0 0-8.86 8c0 4.42 3.58 8 8 8s8-3.58 8-8V11.4c1.39 1 3.1 1.6 4.95 1.6v-3.82a4.843 4.843 0 0 1-3.4-2.49z"/></svg>
-                سپۆنسەری تیکتۆک (بزنس)
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'tiktok-pers')">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
-                ... سپۆنسەری تیکتۆک (شەخسی)
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'meta-ads')">
-                <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                سپۆنسەری مێتا (فەیسبووک و ئینستا)
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'snapchat-ads')">
-                <svg viewBox="0 0 24 24"><path d="M12 2c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l2.79-2.79C10.09 18.64 11.03 19 12 19c4.97 0 9-4.03 9-9 0-4.97-4.03-9-9-9zm0 15c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"/></svg>
-                سپۆنسەری سناپچات
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'other-services')">
-                <svg viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
-                خزمەتگوزاریەکانی تر
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'payment-tab')" style="color: #22d3ee; border-color: rgba(34, 211, 238, 0.3);">
-                <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8z"/></svg>
-                ڕێگاکانی پارەدان
-            </button>
-            <button class="tab-btn" onclick="openTab(event, 'feedback-tab')" style="color: #fbbf24; border-color: rgba(251, 191, 36, 0.3);">
-                <svg viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
-                ڕەخنە و پێشنیارەکان
-            </button>
+            <button class="tab-btn active" onclick="openTab(event, 'tiktok-biz')">سپۆنسەری تیکتۆک (بزنس)</button>
+            <button class="tab-btn" onclick="openTab(event, 'tiktok-pers')">سپۆنسەری تیکتۆک (شەخسی)</button>
+            <button class="tab-btn" onclick="openTab(event, 'meta-ads')">سپۆنسەری مێتا</button>
+            <button class="tab-btn" onclick="openTab(event, 'snapchat-ads')">سپۆنسەری سناپچات</button>
+            <button class="tab-btn" onclick="openTab(event, 'other-services')">خزمەتگوزاریەکانی تر</button>
+            <button class="tab-btn" onclick="openTab(event, 'payment-tab')" style="color: #22d3ee;">ڕێگاکانی پارەدان</button>
         </div>
 
         <div id="tiktok-biz" class="content-section active">
             <div class="grid-container">
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20بزنس:%20١٥،٠٠٠%20بینەر%20بۆ%20٣٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                <div class="card" onclick="openOrderModal('تیکتۆک بزنس', '15,000', '١٥،٠٠٠ بینەر بۆ ٣٠،٠٠٠ بینەر')">
                     <div class="card-info">
                         <span class="card-title">١٥،٠٠٠ بینەر بۆ ٣٠،٠٠٠ بینەر</span>
                         <span class="card-sub">بۆ فرۆشتن و کار و بزنس</span>
                     </div>
                     <div class="card-line"></div>
                     <div class="card-price">15,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20بزنس:%20٥٠،٠٠٠%20بینەر%20بۆ%20٧٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                </div>
+                <div class="card" onclick="openOrderModal('تیکتۆک بزنس', '35,000', '٥٠،٠٠٠ بینەر بۆ ٧٠،٠٠٠ بینەر')">
                     <div class="card-info">
                         <span class="card-title">٥٠،٠٠٠ بینەر بۆ ٧٠،٠٠٠ بینەر</span>
                         <span class="card-sub">بۆ فرۆشتن و کار و بزنس</span>
                     </div>
                     <div class="card-line"></div>
                     <div class="card-price">35,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20بزنس:%20٧٠،٠٠٠%20بینەر%20بۆ%20١١٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                </div>
+                <div class="card" onclick="openOrderModal('تیکتۆک بزنس', '45,000', '٧٠،٠٠٠ بینەر بۆ ١١٠،٠٠٠ بینەر')">
                     <div class="card-info">
                         <span class="card-title">٧٠،٠٠٠ بینەر بۆ ١١٠،٠٠٠ بینەر</span>
                         <span class="card-sub">بۆ فرۆشتن و کار و بزنس</span>
                     </div>
                     <div class="card-line"></div>
                     <div class="card-price">45,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20بزنس:%20١١٠،٠٠٠%20بینەر%20بۆ%20٢٠٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                </div>
+                <div class="card" onclick="openOrderModal('تیکتۆک بزنس', '55,000', '١١٠،٠٠٠ بینەر بۆ ٢٠٠،٠٠٠ بینەر')">
                     <div class="card-info">
                         <span class="card-title">١١٠،٠٠٠ بینەر بۆ ٢٠٠،٠٠٠ بینەر</span>
                         <span class="card-sub">بۆ فرۆشتن و کار و بزنس</span>
                     </div>
                     <div class="card-line"></div>
                     <div class="card-price">55,000 IQD</div>
-                </a>
+                </div>
             </div>
             <div class="custom-request-badge">✨ هەتا ئەو نرخ و بینەرەی خۆت ئەتەوێت</div>
-            <div class="notice-badge-red">
-                تێبینی: لە سپۆنسەری تیکتۆک ناتوانرێت شارەکان دیاری بکرێت سەد لە سەد بەڵام ئەتوانین وا بکەین هەموو بینەرەکان کورد بن یان عەرەب یان هەردوکی کورد و عەرەب وە لایک و کۆمێنت و فۆڵۆو بە دەست ئەو کەسانەیە کە سپۆنسەرەکە ئەبینن. وە ڕۆژی سپۆنسەرەکان بە پێی پارەکان دیاری ئەکرێت.
-            </div>
+            <div class="notice-badge-red"> تێبینی: لایک و فۆڵۆو بە دەست بینەرەکانە و ناتوانرێت شارەکان ١٠٠٪ دیاری بکرێت بەڵام زمان دیاری دەکرێت. </div>
         </div>
 
         <div id="tiktok-pers" class="content-section">
             <div class="grid-container">
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20شەخسی:%20١٥،٠٠٠%20بینەر%20بۆ%20٣٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                <div class="card" onclick="openOrderModal('تیکتۆک شەخسی', '12,000', '١٥،٠٠٠ بینەر بۆ ٣٠،٠٠٠ بینەر')">
                     <div class="card-info">
                         <span class="card-title">١٥،٠٠٠ بینەر بۆ ٣٠،٠٠٠ بینەر</span>
                         <span class="card-sub">پۆستی شەخسی و ئاسایی</span>
                     </div>
                     <div class="card-line"></div>
                     <div class="card-price">12,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20شەخسی:%20٣٠،٠٠٠%20بینەر%20بۆ%20٥٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                </div>
+                <div class="card" onclick="openOrderModal('تیکتۆک شەخسی', '17,000', '٣٠،٠٠٠ بینەر بۆ ٥٠،٠٠٠ بینەر')">
                     <div class="card-info">
                         <span class="card-title">٣٠،٠٠٠ بینەر بۆ ٥٠،٠٠٠ بینەر</span>
                         <span class="card-sub">پۆستی شەخسی و ئاسایی</span>
                     </div>
                     <div class="card-line"></div>
                     <div class="card-price">17,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20شەخسی:%20٥٠،٠٠٠%20بینەر%20بۆ%20٨٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
+                </div>
+                <div class="card" onclick="openOrderModal('تیکتۆک شەخسی', '20,000', '٥٠،٠٠٠ بینەر بۆ ٨٠،٠٠٠ بینەر')">
                     <div class="card-info">
                         <span class="card-title">٥٠،٠٠٠ بینەر بۆ ٨٠،٠٠٠ بینەر</span>
                         <span class="card-sub">پۆستی شەخسی و ئاسایی</span>
                     </div>
                     <div class="card-line"></div>
                     <div class="card-price">20,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20شەخسی:%20٨٠،٠٠٠%20بینەر%20بۆ%20١٣٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
-                    <div class="card-info">
-                        <span class="card-title">٨٠،٠٠٠ بینەر بۆ ١٣٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">پۆستی شەخسی و ئاسایی</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">25,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20تیکتۆک%20شەخسی:%20١٣٠،٠٠٠%20بینەر%20بۆ%20٢٥٠،٠٠٠%20بینەر" class="card" onclick="ttq.track('InitiateCheckout');">
-                    <div class="card-info">
-                        <span class="card-title">١٣٠،٠٠٠ بینەر بۆ ٢٥٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">پۆستی شەخسی و ئاسایی</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">45,000 IQD</div>
-                </a>
+                </div>
             </div>
             <div class="custom-request-badge">✨ هەتا ئەو نرخ و بینەرەی خۆت ئەتەوێت</div>
-            <div class="notice-badge-red">
-                تێبینی: لە سپۆنسەری تیکتۆک ناتوانرێت شارەکان دیاری بکرێت سەد لە سەد بەڵام ئەتوانین وا بکەین هەموو بینەرەکان کورد بن یان عەرەب یان هەردوکی کورد و عەرەب وە لایک و کۆمێنت و فۆڵۆو بە دەست ئەو کەسانەیە کە سپۆنسەرەکە ئەبینن. وە ڕۆژی سپۆنسەرەکان بە پێی پارەکان دیاری ئەکرێت.
-            </div>
         </div>
 
         <div id="meta-ads" class="content-section">
-            <div class="notice-badge">
-                ئەم سپۆنسەره تایبەتە بە فرۆشتن و نامە و پەیوەندی، سپۆنسەرەکە ئەچێتە پێش چاوی ئەو کەسانەی پێویستیان بە بابەتەکەی تۆیە.
-            </div>
+            <div class="notice-badge">ئەم سپۆنسەره تایبەتە بە فرۆشتن و نامە و پەیوەندی.</div>
             <div class="grid-container">
-                <a href="https://wa.me/9647510386174?text=داواکاری%20مێتا:%20٢،٥٠٠%20بینەر%20بۆ%20١٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info"><span class="card-title">٢،٥٠٠ بینەر بۆ ١٠،٠٠٠ بینەر</span></div>
-                    <div class="card-line"></div>
-                    <div class="card-price">10,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20مێتا:%20٣،٧٥٠%20بینەر%20بۆ%20١٥،٠٠٠%20بینەر" class="card">
-                    <div class="card-info"><span class="card-title">٣،٧٥٠ بینەر بۆ ١٥،٠٠٠ بینەر</span></div>
-                    <div class="card-line"></div>
-                    <div class="card-price">15,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20مێتا:%20٥،٠٠٠%20بینەر%20بۆ%20٢٠،٠٠٠%20بینەر" class="card">
+                <a href="https://wa.me/9647510386174?text=داواکاری%20مێتا" class="card">
                     <div class="card-info"><span class="card-title">٥،٠٠٠ بینەر بۆ ٢٠،٠٠٠ بینەر</span></div>
                     <div class="card-line"></div>
                     <div class="card-price">20,000 IQD</div>
                 </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20مێتا:%20٦،٢٥٠%20بینەر%20بۆ%20٢٥،٠٠٠%20بینەر" class="card">
-                    <div class="card-info"><span class="card-title">٦،٢٥٠ بینەر بۆ ٢٥،٠٠٠ بینەر</span></div>
-                    <div class="card-line"></div>
-                    <div class="card-price">25,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20مێتا:%20٧،٥٠٠%20بینەر%20بۆ%20٣٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info"><span class="card-title">٧،٥٠٠ بینەر بۆ ٣٠،٠٠٠ بینەر</span></div>
-                    <div class="card-line"></div>
-                    <div class="card-price">30,000 IQD</div>
-                </a>
-            </div>
-            <div class="custom-request-badge">✨ هەتا ئەو نرخ و بینەرەی خۆت ئەتەوێت</div>
-            <div class="notice-badge-red" style="margin-top:16px;">
-                <strong>تێبینی ئینستاگرام و فەیسبووک:</strong> لە سپۆنسەر ئینستاگرام پێویستە ئینستاگرامەکەت کۆنێکت بێت بە پەیجێکی فەیسبوک دواتر لە پەیج فەیسبووکەکە ئەمان کەیت بە ئەدمین لە ڕێگەی پەیجی فەیسبووکەکە سپۆنسەر بۆ ئینستاگرامەکەت ئەکرێت و پەیجی فەیسبوکەکە تەنیا بۆ ئەوەی سپۆنسەری ئینستاگرامەکە لای کەس دەرناکەوێت. وە ڕۆژی سپۆنسەرەکان بە پێی پارەکان دیاری ئەکرێت.
-            </div>
-        </div>
-
-        <div id="snapchat-ads" class="content-section">
-            <div class="notice-badge">
-                <strong>سپۆنسەری سناپچات:</strong> تایبەتە بە زیادکردنی فۆڵۆوەر وە شار, تەمەن، و ڕەگەز بە خواستی خۆت دیاری ئەکەیت.
-            </div>
-            <div class="grid-container">
-                <a href="https://wa.me/9647510386174?text=داواکاری%20سناپچات:%20٢٠،٠٠٠%20بینەر%20بۆ%20٥٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info">
-                        <span class="card-title">٢٠،٠٠٠ بینەر بۆ ٥٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">دیاریکردنی تەمەن، شار و ڕەگەز بەخواست</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">25,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20سناپچات:%20٢٤،٠٠٠%20بینەر%20بۆ%20٦٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info">
-                        <span class="card-title">٢٤،٠٠٠ بینەر بۆ ٦٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">دیاریکردنی تەمەن، شار و ڕەگەز بەخواست</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">30,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20سناپچات:%20٢٨،٠٠٠%20بینەر%20بۆ%20٧٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info">
-                        <span class="card-title">٢٨،٠٠٠ بینەر بۆ ٧٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">دیاریکردنی تەمەن، شار و ڕەگەز بەخواست</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">35,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20سناپچات:%20٣٢،٠٠٠%20بینەر%20بۆ%20٨٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info">
-                        <span class="card-title">٣٢،٠٠٠ بینەر بۆ ٨٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">دیاریکردنی تەمەن، شار و ڕەگەز بەخواست</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">40,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20سناپچات:%20٣٦،٠٠٠%20بینەر%20بۆ%20٩٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info">
-                        <span class="card-title">٣٦،٠٠٠ بینەر بۆ ٩٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">دیاریکردنی تەمەن، شار و ڕەگەز بەخواست</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">45,000 IQD</div>
-                </a>
-                <a href="https://wa.me/9647510386174?text=داواکاری%20سناپچات:%20٤٠،٠٠٠%20بینەر%20بۆ%20١٠٠،٠٠٠%20بینەر" class="card">
-                    <div class="card-info">
-                        <span class="card-title">٤٠،٠٠٠ بینەر بۆ ١٠٠،٠٠٠ بینەر</span>
-                        <span class="card-sub">دیاریکردنی تەمەن، شار و ڕەگەز بەخواست</span>
-                    </div>
-                    <div class="card-line"></div>
-                    <div class="card-price">50,000 IQD</div>
-                </a>
-            </div>
-            <div class="custom-request-badge">✨ هەتا ئەو نرخ و بینەرەی خۆت ئەتەوێت</div>
-            <div class="notice-badge-red">
-                تێبینی: لە سپۆنسەری سناپچات پێویستی بە پاسۆرد و وسێر نەیم سناپچاتەکەت ئەبێت. وە ڕۆژی سپۆنسەرەکان بە پێی پارەکان دیاری ئەکرێت.
             </div>
         </div>
 
         <div id="other-services" class="content-section">
             <div class="service-card">
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg>
                 <div class="service-title">دروستکردنی وێبسایت و ئەپڵیکەیشن</div>
-                <div class="service-desc">دروستکردنی سەکۆ و ماڵپەڕی پێشکەوتوو بۆ گەشەپێدانی فەرمی بازرگانیەکەت.</div>
-            </div>
-            <div class="service-card">
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-1 9H9V9h10v2zm-4 4H9v-2h6v2z"/></svg>
-                <div class="service-title">دروستکردنی هەمۆ جۆرە سیستەمێک</div>
-                <div class="service-desc">دیزاین و پەرەپێدانی سیستەمی پێشکەوتوو، کاشێر، بەڕێوەبردنی کۆگا و داتابەیس.</div>
-            </div>
-            <div class="service-card">
-                <svg class="service-icon" viewBox="0 0 24 24"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4zM14 13h-3v3H9v-3H6v-2h3V8h2v3h3v2z"/></svg>
-                <div class="service-title">ڤیدیۆگرافی و مۆنتاژ و ڕیکلامی ڤیدیۆیی</div>
-                <div class="service-desc">بەرهەمهێنانی ڤیدیۆی پڕۆفیشناڵ، مۆنتاژکردن بە بەرزترین کوالێتی و دروستکردنی ڕیکلامی ڤیدیۆیی سەرنجڕاکێش بۆ زیاتر ناساندنی کارەکەت.</div>
+                <div class="service-desc">دروستکردنی سەکۆ و ماڵپەڕی پێشکەوتوو بۆ گەشەپێدانی بازرگانیەکەت.</div>
             </div>
         </div>
 
         <div id="payment-tab" class="content-section">
-            <div class="payment-box">
-                <div class="payment-title">ڕێگاکانی پارەدان</div>
-                <div class="payment-grid">
-                    <a href="https://wa.me/9647510386174?text=سڵاو%20من%20دەمەوێت%20لە%20ڕێگەی%20FIB%20پارە%20بدەم" class="payment-item p-fib">
-                        <div class="payment-item-icon">
-                            <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2zm0 4v10h16V8H4zm2 2h4v2H6v-2zm0 4h7v2H6v-2z"/></svg>
-                        </div>
-                        <span>FIB Bank</span>
-                    </a>
-                    <a href="https://wa.me/9647510386174?text=سڵاو%20من%20دەمەوێت%20لە%20ڕێگەی%20FastPay%20پارە%20بدەم" class="payment-item p-fastpay">
-                        <div class="payment-item-icon">
-                            <svg viewBox="0 0 24 24"><path d="M21 18v1c0 1.1-.9 2-2 2H5c-1.11 0-2-.9-2-2V5c0-1.1.89-2 2-2h14c1.1 0 2 .9 2 2v1h-9c-1.11 0-2 .9-2 2v8c0 1.1.89 2 2 2h9zm-9-2h10V8H12v8z"/></svg>
-                        </div>
-                        <span>FastPay</span>
-                    </a>
-                    <a href="https://wa.me/9647510386174?text=سڵاو%20من%20دەمەوێت%20لە%20ڕێگەی%20Qi%20Card%20پارە%20بدەم" class="payment-item p-qi">
-                        <div class="payment-item-icon">
-                            <svg viewBox="0 0 24 24"><path d="M21 4H3c-1.11 0-2 .89-2 2v12c0 1.1.89 2 2 2h18c1.11 0 2-.9 2-2V6c0-1.1-.89-2-2-2zm0 14H3V6h18v12zM5 8h2v2H5zm0 4h2v2H5zm4-4h10v2H9zm0 4h10v2H9z"/></svg>
-                        </div>
-                        <span>Qi Card</span>
-                    </a>
-                    <a href="https://wa.me/9647510386174?text=سڵاو%20من%20دەمەوێت%20لە%20ڕێگەی%20NassWallet%20پارە%20بدەم" class="payment-item p-nass">
-                        <div class="payment-item-icon">
-                            <svg viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-1 11H6v-2h12v2zm0-4H6V8h12v2z"/></svg>
-                        </div>
-                        <span>NassWallet</span>
-                    </a>
-                </div>
-                <div class="payment-number-box">
-                    <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M6.62,10.79C8.06,13.62 10.38,15.94 13.21,17.38L15.41,15.18C15.69,14.9 16.08,14.82 16.43,14.93C17.55,15.3 18.75,15.5 20,15.5A1,1 0 0,1 21,16.5V20A1,1 0 0,1 20,21A17,17 0 0,1 3,4A1,1 0 0,1 4,3H7.5A1,1 0 0,1 8.5,4C8.5,5.25 8.7,6.45 9.07,7.57C9.18,7.92 9.1,8.31 8.82,8.59L6.62,10.79Z"/></svg>
-                    <span>0772 958 5559</span>
-                </div>
-            </div>
-        </div>
-
-        <div id="feedback-tab" class="content-section">
-            <div class="feedback-box">
-                <div class="feedback-title">ڕەخنە و پێشنیارەکانتان بنووسن</div>
-                <div class="form-group">
-                    <input type="text" id="rev-name" class="form-input" placeholder="ناوی تۆ...">
-                </div>
-                <div class="form-group">
-                    <textarea id="rev-text" class="form-textarea" placeholder="ڕەخنە یان پێشنیارەکەت بنووسە..."></textarea>
-                </div>
-                <div class="rating-select" id="star-rating">
-                    <span class="star-icon" data-value="1">★</span>
-                    <span class="star-icon" data-value="2">★</span>
-                    <span class="star-icon" data-value="3">★</span>
-                    <span class="star-icon" data-value="4">★</span>
-                    <span class="star-icon" data-value="5">★</span>
-                </div>
-                <button class="submit-btn" onclick="addReview()">ناردنی پێشنیار</button>
-
-                <div class="feedback-whatsapp-box">
-                    <div class="feedback-whatsapp-text">یاخود دەتوانن ڕاستەوخۆ لە وەتسئەپەوە پەیوەندیمان پێوە بکەن:</div>
-                    <a href="https://wa.me/9647510386174" class="btn-feedback-wa" target="_blank">
-                        <svg viewBox="0 0 24 24"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21 5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.817 9.817 0 0 0 12.04 2z"/></svg>
-                        <span>WhatsApp: 0751 038 6174</span>
-                    </a>
-                </div>
-
-                <div class="reviews-list" id="reviews-container">
-                    <div class="review-item">
-                        <div class="review-header">
-                            <span class="review-name">سازگار ئەحمەد</span>
-                            <span class="review-stars">★★★★★</span>
-                        </div>
-                        <div class="review-text">خزمەتگوزاری سپۆنسەری تیکتۆکتان زۆر نایاب بوو، فرۆشی پەیجەکەمی زۆر زیاد کرد. دەستتان خۆش بێت.</div>
-                    </div>
-                </div>
+            <div class="payment-number-box">
+                <span>0772 958 5559</span>
             </div>
         </div>
 
@@ -882,11 +689,7 @@
             const el = document.getElementById(id);
             const body = el.querySelector('.menu-content-body');
             el.classList.toggle('active');
-            if (el.classList.contains('active')) {
-                body.style.maxHeight = body.scrollHeight + "px";
-            } else {
-                body.style.maxHeight = "0";
-            }
+            body.style.maxHeight = el.classList.contains('active') ? body.scrollHeight + "px" : "0";
         }
 
         function openTab(evt, tabName) {
@@ -899,74 +702,64 @@
             evt.currentTarget.classList.add("active");
         }
 
-        let selectedRating = 5;
-        const stars = document.querySelectorAll('#star-rating .star-icon');
-        stars.forEach(star => {
-            star.addEventListener('click', (e) => {
-                selectedRating = parseInt(e.target.getAttribute('data-value'));
-                stars.forEach(s => {
-                    if(parseInt(s.getAttribute('data-value')) <= selectedRating) {
-                        s.classList.add('active');
-                    } else {
-                        s.classList.remove('active');
-                    }
-                });
-            });
-        });
-        stars.forEach(s => s.classList.add('active'));
-
-        function loadReviews() {
-            const container = document.getElementById('reviews-container');
-            const saved = JSON.parse(localStorage.getItem('kurd_agency_reviews')) || [];
-            saved.forEach(rev => {
-                const item = document.createElement('div');
-                item.className = 'review-item';
-                item.innerHTML = `
-                    <div class="review-header">
-                        <span class="review-name">${rev.name}</span>
-                        <span class="review-stars">${'★'.repeat(rev.rating)}${'☆'.repeat(5-rev.rating)}</span>
-                    </div>
-                    <div class="review-text">${rev.text}</div>
-                `;
-                container.insertBefore(item, container.firstChild);
-            });
+        /* --- نوی: فەنکشنی مۆدێل و ناردنی وەتسئەپ --- */
+        function openOrderModal(type, price, title) {
+            document.getElementById('orderModal').style.display = 'flex';
+            document.getElementById('order-type').value = type;
+            document.getElementById('order-price').value = price + " IQD";
+            // دەتوانی لێرە نازناوی کاتەکەش پاشەکەوت بکەی
+            window.selectedTitle = title;
         }
 
-        function addReview() {
-            const nameInput = document.getElementById('rev-name');
-            const textInput = document.getElementById('rev-text');
-            if(!nameInput.value.trim() || !textInput.value.trim()) {
-                alert('تکایە ناو و پێشنیارەکەت بنووسە.');
+        function closeOrderModal() {
+            document.getElementById('orderModal').style.display = 'none';
+        }
+
+        function submitToWhatsApp() {
+            const name = document.getElementById('order-name').value;
+            const type = document.getElementById('order-type').value;
+            const price = document.getElementById('order-price').value;
+            const vidCode = document.getElementById('order-vid-code').value;
+            const vidLink = document.getElementById('order-vid-link').value;
+            const gender = document.getElementById('order-gender').value;
+            const age = document.getElementById('order-age').value;
+            const audience = document.getElementById('order-audience').value;
+            const work = document.getElementById('order-work').value;
+            const contact = document.getElementById('order-contact').value;
+
+            if(!name || !vidLink || !contact) {
+                alert('تکایە خانە سەرەکییەکان (ناو، لینک، ڕێگەی پەیوەندی) پڕ بکەرەوە');
                 return;
             }
 
-            const newReview = {
-                name: nameInput.value.trim(),
-                text: textInput.value.trim(),
-                rating: selectedRating
-            };
+            const message = `🌟 داواکاری سپۆنسەری نوێ 🌟%0A%0A` +
+                            `👤 ناوی کڕیار: ${name}%0A` +
+                            `📦 جۆری سپۆنسەر: ${type}%0A` +
+                            `💰 نرخ: ${price}%0A` +
+                            `📊 بڕی بینەر: ${window.selectedTitle}%0A%0A` +
+                            `🔑 کۆدی ڤیدیۆ: ${vidCode}%0A` +
+                            `🔗 لینکی ڤیدیۆ: ${vidLink}%0A` +
+                            `👫 ڕەگەز: ${gender}%0A` +
+                            `🎂 تەمەن: ${age}%0A` +
+                            `🌍 بینەر: ${audience}%0A` +
+                            `💼 جۆری کار: ${work}%0A` +
+                            `📞 پەیوەندی: ${contact}%0A%0A` +
+                            `✅ تکایە داواکارییەکە جێبەجێ بکەن.`;
 
-            const saved = JSON.parse(localStorage.getItem('kurd_agency_reviews')) || [];
-            saved.push(newReview);
-            localStorage.setItem('kurd_agency_reviews', JSON.stringify(saved));
-
-            const container = document.getElementById('reviews-container');
-            const item = document.createElement('div');
-            item.className = 'review-item';
-            item.innerHTML = `
-                <div class="review-header">
-                    <span class="review-name">${newReview.name}</span>
-                    <span class="review-stars">${'★'.repeat(newReview.rating)}${'☆'.repeat(5-newReview.rating)}</span>
-                </div>
-                <div class="review-text">${newReview.text}</div>
-            `;
-            container.insertBefore(item, container.firstChild);
-
-            nameInput.value = '';
-            textInput.value = '';
+            const whatsappNumber = "9647510386174";
+            const whatsappURL = `https://wa.me/${whatsappNumber}?text=${message}`;
+            
+            alert('پیرۆزە سپۆنسەرەکەت سەرکەوتو بوو! ئێستا دەنێردرێت بۆ وەتسئەپ...');
+            window.open(whatsappURL, '_blank');
+            closeOrderModal();
         }
 
-        window.onload = loadReviews;
+        // داخستنی مۆدێل ئەگەر کلیک لە دەرەوە کرا
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('orderModal')) {
+                closeOrderModal();
+            }
+        }
     </script>
 </body>
 </html>
